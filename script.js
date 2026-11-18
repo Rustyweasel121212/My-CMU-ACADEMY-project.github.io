@@ -16,3 +16,15 @@ document.querySelectorAll(".fullscreen-button").forEach((button) => {
     }
   });
 });
+
+document.querySelectorAll(".code-toggle").forEach((button) => {
+  button.addEventListener("click", () => {
+    const code = document.getElementById(button.getAttribute("aria-controls"));
+    if (!code) return;
+
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", String(!isExpanded));
+    button.textContent = isExpanded ? "Show project code" : "Hide project code";
+    code.hidden = isExpanded;
+  });
+});
