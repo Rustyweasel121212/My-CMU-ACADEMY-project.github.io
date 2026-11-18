@@ -114,6 +114,11 @@ h1 {
   font-weight: 800;
 }
 
+.project-title {
+  min-width: 0;
+  flex: 1;
+}
+
 .unit-label {
   font-size: 0.7rem;
 }
@@ -123,6 +128,36 @@ h1 {
   color: var(--text-primary);
   font-size: 1.15rem;
   line-height: 1.3;
+}
+
+.fullscreen-button {
+  display: inline-flex;
+  min-height: 38px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  background: #26344c;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.fullscreen-button:hover,
+.fullscreen-button:focus-visible {
+  border-color: var(--primary);
+  background: rgba(99, 102, 241, 0.25);
+}
+
+.fullscreen-button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 .project-frame {
@@ -138,6 +173,14 @@ h1 {
   width: 100%;
   height: 460px;
   border: 0;
+  background: #fff;
+}
+
+.project-frame iframe:fullscreen {
+  width: 100vw;
+  height: 100vh;
+  border: 0;
+  border-radius: 0;
   background: #fff;
 }
 
@@ -180,6 +223,20 @@ h1 {
   .projects {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  .card-heading {
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .fullscreen-button span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
   }
 
   .project-frame iframe {
