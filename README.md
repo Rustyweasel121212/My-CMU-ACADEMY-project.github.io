@@ -1,4 +1,1 @@
-BRILLIANT MOVE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-NO DISCLAIMER
-NO LICENSE
-COPY IT DOWNLOAD IT I DON'T GIVE A ****
+
