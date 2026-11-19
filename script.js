@@ -29,7 +29,7 @@ document.querySelectorAll(".code-toggle").forEach((button) => {
   });
 });
 
-// Add the project reflections at the bottom of the page, just above the footer.
+// Show the project descriptions at the bottom of the page, above the footer.
 const footer = document.querySelector(".site-footer");
 if (footer) {
   const descriptions = document.createElement("section");
@@ -43,12 +43,10 @@ if (footer) {
       .description-card { padding: 18px; border: 1px solid var(--border-color); border-radius: 12px; background: var(--light-bg); }
       .description-card h3 { margin: 0 0 8px; color: var(--primary); font-size: 1.05rem; }
       .description-card p { margin: 0; color: var(--text-secondary); }
-      .project-descriptions .code-toggle { margin: 0 0 18px; }
       @media (max-width: 900px) { .description-list { grid-template-columns: 1fr; } }
     </style>
     <h2>About These Projects</h2>
-    <button class="code-toggle" type="button" aria-expanded="false" aria-controls="project-descriptions-content">Show project descriptions</button>
-    <div class="description-list" id="project-descriptions-content" hidden>
+    <div class="description-list">
       <article class="description-card">
         <h3>Project 1: Firefox Logo</h3>
         <p>In this project, I used the shape properties I learned in Unit 1 and brought them together to create a Firefox logo. I originally imagined layering a transparent Firefox logo over a pixelated fox, but I found that opacity in CMU Graphics did not look the way I wanted, so I simplified the design.</p>
@@ -63,15 +61,6 @@ if (footer) {
       </article>
     </div>
   `;
-
-  const descriptionButton = descriptions.querySelector(".code-toggle");
-  descriptionButton.addEventListener("click", () => {
-    const content = document.getElementById(descriptionButton.getAttribute("aria-controls"));
-    const isExpanded = descriptionButton.getAttribute("aria-expanded") === "true";
-    descriptionButton.setAttribute("aria-expanded", String(!isExpanded));
-    descriptionButton.textContent = isExpanded ? "Show project descriptions" : "Hide project descriptions";
-    content.hidden = isExpanded;
-  });
 
   footer.before(descriptions);
 }
